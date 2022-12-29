@@ -44,11 +44,7 @@
             </div>
             <div class="md-layout">
               <div class="md-layout-item md-small-size-100">
-                <md-datepicker
-                  v-model="dob"
-                  @md-closed="datePickerClosed"
-                  @md-open="datePickerOpen"
-                >
+                <md-datepicker v-model="dob">
                   <label>Ngày sinh</label>
                 </md-datepicker>
                 <div class="input__error">{{ error.dob }}</div>
@@ -270,7 +266,7 @@ export default Vue.extend({
       } else {
         this.error.dob = 'Ngày sinh không được bỏ trống.';
       }
-    },git remote add origin https://github.com/liemking29/dbs_account_management.git
+    },
 
     datePickerOpen() {
       this.error.dob = '';
