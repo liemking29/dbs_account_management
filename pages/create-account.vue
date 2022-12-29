@@ -47,7 +47,6 @@
                 <md-datepicker v-model="dob">
                   <label>Ngày sinh</label>
                 </md-datepicker>
-                <div class="input__error">{{ error.dob }}</div>
               </div>
             </div>
             <div class="md-layout">
@@ -258,18 +257,6 @@ export default Vue.extend({
         const isValid = regexEmail.test(this.email);
         this.error.email = !isValid ? 'Email không hợp lệ.' : '';
       }
-    },
-
-    datePickerClosed() {
-      if (this.dob) {
-        this.error.dob = '';
-      } else {
-        this.error.dob = 'Ngày sinh không được bỏ trống.';
-      }
-    },
-
-    datePickerOpen() {
-      this.error.dob = '';
     },
   },
 });
